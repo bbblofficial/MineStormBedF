@@ -34,27 +34,25 @@
             <version>1.8.8-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
             <exclusions>
+                <!-- 1.8-SNAPSHOT of bungeecord-chat is no longer hosted anywhere; use a release from Central below -->
                 <exclusion>
                     <groupId>net.md-5</groupId>
                     <artifactId>bungeecord-chat</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
-
         <dependency>
             <groupId>net.md-5</groupId>
             <artifactId>bungeecord-chat</artifactId>
             <version>1.16-R0.4</version>
             <scope>provided</scope>
         </dependency>
-
         <dependency>
             <groupId>me.clip</groupId>
             <artifactId>placeholderapi</artifactId>
             <version>2.11.5</version>
             <scope>provided</scope>
         </dependency>
-
         <dependency>
             <groupId>org.xerial</groupId>
             <artifactId>sqlite-jdbc</artifactId>
@@ -79,10 +77,8 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
-                    <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
@@ -93,8 +89,9 @@
                         <goals><goal>shade</goal></goals>
                         <configuration>
                             <createDependencyReducedPom>false</createDependencyReducedPom>
-                            <!-- No <artifactSet>: the project's own classes always stay,
-                                 and provided-scope spigot-api / placeholderapi never enter the jar. -->
+                            <!-- No artifactSet on purpose: shade then packs the project's own classes plus every compile-scope
+                                 dependency (sqlite-jdbc). Provided-scope deps (spigot-api, bungeecord-chat, PlaceholderAPI) are never packed.
+                                 sqlite-jdbc is NOT relocated: its native loader depends on the org.sqlite package name. -->
                             <filters>
                                 <filter>
                                     <artifact>*:*</artifact>
