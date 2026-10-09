@@ -1,0 +1,45 @@
+# ---------------------------------------------------------------------------
+# BedFight config.yml
+# When the plugin is updated, NEW keys are added to this file automatically.
+# Your existing values and comments are never overwritten or deleted.
+# ---------------------------------------------------------------------------
+
+# Mode used by plain "/bedfight" (1v1, 2v2 or 3v3)
+default-mode: 1v1
+# Legacy fallback lobby world, used ONLY until you run /bedfight setlobby
+# (empty = first loaded world)
+lobby-world: ""
+# NOTE: countdown, respawn, sounds, spectator and message options live in settings.yml
+
+lobby:
+  # Send players to the lobby when they join (only once a lobby has been set)
+  teleport-on-join: true
+  # Protect only this many blocks around the lobby spawn (0 = the whole lobby world)
+  protection-radius: 0
+
+match:
+  # When a player disconnects/forfeits and the match is decided, everyone is sent to the lobby
+  # immediately instead of after game.end-delay-seconds (settings.yml)
+  forfeit-instant-eject: true
+
+database:
+  # How often the cached top-10 leaderboards are refreshed (clamped to 3-5 minutes)
+  leaderboard-refresh-minutes: 4
+
+# Sound cues for the respawn countdown. Names are Minecraft 1.8.8 Sound enum names.
+respawn-sounds:
+  enabled: true
+  # played once per second while waiting to respawn, pitch rises from min to max
+  tick: ORB_PICKUP
+  tick-min-pitch: 0.7
+  tick-max-pitch: 2.0
+  volume: 1.0
+  # played on the actual respawn, format "SOUND:volume:pitch:delayTicks" (all but the name optional)
+  done:
+    - "LEVEL_UP:1.0:1.0"
+    - "ORB_PICKUP:1.0:1.5:3"
+
+placeholders:
+  # Shown by %bedfight_top_*% when a leaderboard slot is empty
+  empty-name: "-"
+  empty-value: "0"
