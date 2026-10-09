@@ -92,6 +92,8 @@
                             <!-- sqlite-jdbc is shaded WITHOUT relocation: its native loader depends on the org.sqlite package name. -->
                             <artifactSet>
                                 <includes>
+                                    <!-- the project's own classes MUST be listed, otherwise an includes-only artifactSet drops them from the jar -->
+                                    <include>com.example:bedfight</include>
                                     <include>org.xerial:sqlite-jdbc</include>
                                 </includes>
                             </artifactSet>
