@@ -1,14 +1,13 @@
 name: BedFight
 main: com.example.bedfight.BedFightPlugin
-version: 1.3.0
-author: Itz_nanm
-description: BedFight minigame with parties, SQLite statistics and PlaceholderAPI leaderboards
-softdepend: [PlaceholderAPI]
+version: 1.2.1
+author: YourName
+description: BedFight minigame with a built-in party system
 
 commands:
   bedfight:
-    description: BedFight queue, private matches, spectating, lobby and arena setup
-    usage: /<command> [1v1|2v2|3v3|private|spec <player>|kiteditor|leave|creator|setlobby [world]]
+    description: BedFight queue, private matches, spectating and arena setup
+    usage: /<command> [1v1|2v2|3v3|private|spec <player>|kiteditor|leave]
     aliases: [bf]
 
   party:
@@ -39,7 +38,7 @@ permissions:
     description: Spectate running matches with /bedfight spec <player>
     default: true
   bedfight.admin:
-    description: Arena setup, /bedfight setlobby, and building in the lobby
+    description: Arena setup commands
     default: op
   bedfight.rank.mvpplusplus:
     description: MVP++ rank, allowed to create private matches

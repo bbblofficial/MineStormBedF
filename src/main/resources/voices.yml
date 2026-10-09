@@ -31,20 +31,6 @@ sounds:
   countdown-last: ["NOTE_STICKS:1.0:1.6"]
   fight-start: ["NOTE_PLING:1.0:2.0"]
 
-  # --- coin / level-up cues (added in 1.3.1; merged into existing files automatically)
-  # every second of the pre-match countdown (ORB_PICKUP = the "coin" sound)
-  countdown-count: ["ORB_PICKUP:1.0:1.0"]
-  # the last 3 seconds of the countdown, higher pitch
-  countdown-final: ["ORB_PICKUP:1.0:1.5"]
-  # when you are placed on your spawn before the countdown
-  spawn: ["LEVEL_UP:0.8:1.2"]
-  # the moment the fight starts
-  fight-go: ["LEVEL_UP:1.0:1.0", "ORB_PICKUP:1.0:1.5:3"]
-  # every second of the respawn counter; the pitch rises (see respawn-sounds in config.yml)
-  respawn-count: ["ORB_PICKUP:1.0:1.0"]
-  # when you actually respawn
-  respawn-done: ["LEVEL_UP:1.0:1.0", "ORB_PICKUP:1.0:1.5:3"]
-
   # --- kills (killer hears these)
   kill: ["SUCCESSFUL_HIT:1.0:1.0", "ORB_PICKUP:1.0:1.9:2", "NOTE_PLING:0.8:2.0:5"]
   # victim could not respawn (bed already destroyed)

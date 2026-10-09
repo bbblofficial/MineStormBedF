@@ -77,9 +77,11 @@ party:
   default-open: false
   default-all-invite: false
   # Party chat format. %rank% is "[Leader] " / "[Mod] " / empty
-  chat-format: "&bParty &f> %rank%&f%player%&f: &b%message%"
+  chat-format: "&9Party &8> %rank%&f%player%&8: &7%message%"
 
-# NOTE: the "cannot build / cannot break" texts moved to messages.yml (match.cannot-build, match.cannot-break)
+messages:
+  cannot-build: "&cYou cannot build here!"
+  cannot-break: "&cYou can only break blocks placed by players! (&7%block%&c)"
 
 private-match:
   # Values the private match menu cycles through

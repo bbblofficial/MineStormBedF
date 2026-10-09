@@ -20,54 +20,54 @@ enabled: true
 update-ticks: 20
 ip: "Play.MineStorm.IR"
 
-# Style: aqua bold title, white labels, aqua values, aqua separators
+# Style: magenta bold title, white labels, magenta values, gray separators (like the EU Practice board)
 match:
-  title: "&b&lMINESTORM"
+  title: "&d&lMINESTORM"
   lines:
-    - "&b&m------------------"
+    - "&7&m------------------"
     - "%teams%"
     - ""
-    - "&fKills: &b%kills%"
+    - "&fKills: &d%kills%"
     - ""
-    - "&fYour Ping: &b%ping% ms"
-    - "&fTheir Ping: &b%opponent_ping% ms"
+    - "&fYour Ping: &d%ping% ms"
+    - "&fTheir Ping: &d%opponent_ping% ms"
     - ""
-    - "&b%ip%"
-    - "&b&m------------------"
+    - "&d%ip%"
+    - "&7&m------------------"
   # one line per team, e.g. "B Blue: \u2714 YOU"
   team-line: "%color%%letter% &f%name%: %team_status%%you%"
   # shown while the team's bed is alive
-  bed-alive: "&b\u2714"
+  bed-alive: "&a\u2714"
   # shown after the bed is destroyed: number of players still alive on that team
-  bed-dead: "&b%alive%"
+  bed-dead: "&a%alive%"
   # shown when the whole team is eliminated
-  eliminated: "&f\u2718"
+  eliminated: "&c\u2718"
   # appended to your own team's line
-  you: " &fYOU"
+  you: " &7YOU"
 
 queue:
-  title: "&b&lMINESTORM"
+  title: "&d&lMINESTORM"
   lines:
-    - "&b&m------------------"
-    - "&fMode: &b%mode%"
-    - "&fQueued: &b%queued%&f/&b%needed%"
-    - "&fWaiting: &b%queue_time%"
+    - "&7&m------------------"
+    - "&fMode: &d%mode%"
+    - "&fQueued: &d%queued%&f/&d%needed%"
+    - "&fWaiting: &d%queue_time%"
     - ""
-    - "&fYour Ping: &b%ping% ms"
+    - "&fYour Ping: &d%ping% ms"
     - ""
-    - "&b%ip%"
-    - "&b&m------------------"
+    - "&d%ip%"
+    - "&7&m------------------"
 
 spectator:
-  title: "&b&lMINESTORM"
+  title: "&d&lMINESTORM"
   lines:
-    - "&b&m------------------"
+    - "&7&m------------------"
     - "%teams%"
     - ""
-    - "&fTime: &b%time%"
-    - "&fSpectators: &b%spectators%"
+    - "&fTime: &d%time%"
+    - "&fSpectators: &d%spectators%"
     - ""
-    - "&fYou are spectating"
+    - "&7You are spectating"
     - ""
-    - "&b%ip%"
-    - "&b&m------------------"
+    - "&d%ip%"
+    - "&7&m------------------"
